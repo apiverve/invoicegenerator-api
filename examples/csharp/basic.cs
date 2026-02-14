@@ -20,7 +20,7 @@ namespace APIVerve.Examples
         private static readonly string API_URL = "https://api.apiverve.com/v1/invoicegenerator";
 
         /// <summary>
-        /// Make a POST request to the Invoice Generator API
+        /// Make a GET request to the Invoice Generator API
         /// </summary>
         static async Task<JsonDocument> CallInvoiceGeneratorAPI()
         {
@@ -29,13 +29,7 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                // Request body
-                var requestBody &#x3D; new { invoiceNumber &#x3D; &quot;INV000001&quot;, date &#x3D; &quot;2025-02-01&quot;, dueDate &#x3D; &quot;2025-11-30&quot;, from &#x3D; [object Object], to &#x3D; [object Object], job &#x3D; &quot;Web Development&quot;, paymentTerms &#x3D; &quot;Net 30&quot;, discount &#x3D; 10, salesTax &#x3D; 37.07, currency &#x3D; &quot;USD&quot;, items &#x3D; [object Object],[object Object] };
-
-                var jsonContent = JsonSerializer.Serialize(requestBody);
-                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync(API_URL, content);
+                var response = await client.GetAsync(API_URL);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
