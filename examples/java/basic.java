@@ -12,22 +12,8 @@ public class BasicExample {
         InvoiceGeneratorAPIClient client = new InvoiceGeneratorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Request body
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;invoiceNumber&quot;, &quot;INV000001&quot;);
-        parameters.put(&quot;date&quot;, &quot;2025-02-01&quot;);
-        parameters.put(&quot;dueDate&quot;, &quot;2025-11-30&quot;);
-        parameters.put(&quot;from&quot;, [object Object]);
-        parameters.put(&quot;to&quot;, [object Object]);
-        parameters.put(&quot;job&quot;, &quot;Web Development&quot;);
-        parameters.put(&quot;paymentTerms&quot;, &quot;Net 30&quot;);
-        parameters.put(&quot;discount&quot;, 10);
-        parameters.put(&quot;salesTax&quot;, 37.07);
-        parameters.put(&quot;currency&quot;, &quot;USD&quot;);
-        parameters.put(&quot;items&quot;, [object Object],[object Object]);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
