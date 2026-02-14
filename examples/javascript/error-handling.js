@@ -20,17 +20,18 @@ class APIError extends Error {
 /**
  * Make an API call with comprehensive error handling
  */
-async function callInvoiceGeneratorAPIWithErrorHandling(requestData) {
+async function callInvoiceGeneratorAPIWithErrorHandling(queryParams = {}) {
   try {
     console.log('📤 Making API request...');
 
-    const response = await fetch(API_URL, {
-      method: 'POST',
+    const params = new URLSearchParams(queryParams);
+    const url = `${API_URL}?${params}`;
+
+    const response = await fetch(url, {
+      method: 'GET',
       headers: {
-        'x-api-key': API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestData)
+        'x-api-key': API_KEY
+      }
     });
 
     // Parse response
@@ -105,7 +106,7 @@ async function callWithRetry(maxRetries = 3, initialDelay = 1000) {
       console.log(`\n🔄 Attempt ${attempt}/${maxRetries}`);
 
       const result = await callInvoiceGeneratorAPIWithErrorHandling({
-        // Your request data here
+        // Your query parameters here
       });
 
       return result;
