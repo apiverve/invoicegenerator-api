@@ -1,19 +1,137 @@
 openapi: 3.0.4
 info:
   title: Invoice Generator
-  description: Invoice Generator is a simple tool for generating invoices. It returns a PDF of the generated invoice.
+  description: >-
+    Invoice Generator is a simple tool for generating invoices. It returns a PDF
+    of the generated invoice.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
-paths: {}
+  - url: https://api.apiverve.com/
+paths:
+  /v1/invoicegenerator:
+    post:
+      summary: Generate Invoice
+      description: Generate an invoice
+      operationId: invoicegenerator
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  pdfName: fc17c4bd-e660-4078-94ae-f46be56c9006.pdf
+                  expires: 1766096689189
+                  downloadURL: >-
+                    https://storage.googleapis.com/apiverve-helpers.appspot.com/htmltopdf/fc17c4bd-e660-4078-94ae-f46be56c9006.pdf?GoogleAccessId=1089020767582-compute%40developer.gserviceaccount.com&Expires=1766096689&Signature=zZYB17Rj1yfbfhM3Epmjc9PEfmsVpgsCATX5%2Bx2yAo%2FV45xUatVzkAjUkPC48PkR4m%2BF7uIJBToUY2QAZMzNIOre4T0Md2eToXtcYF%2F%2FefS3sZocODRdiC%2BmEuMZjsAPMfkhbCMQZT4lZczQn9sfaWJlWJi%2FGWXKVUwZby3yn06Ed7OqianYbxQj87ENoqYudZFe5qFpI0hmwh4lBrnIM40hb4eZwwbGEvZL2WejNdBgD0cKb3C%2BHwJHkPvd2PAzFfNvuJolBxMN4jE3QCx9DN2MdHGUqb7t3vlP0Kder8m0lMpac%2BPbwZsDVmlF595cFzkKaE928uxzA1Mzkenffg%3D%3D
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                invoiceNumber:
+                  type: string
+                  description: The invoice number
+                date:
+                  type: string
+                  description: The invoice date (YYYY-MM-DD format)
+                from_name:
+                  type: string
+                  description: The name of the person or company issuing the invoice
+                from_street:
+                  type: string
+                  description: >-
+                    The street address of the person or company issuing the
+                    invoice
+                from_city:
+                  type: string
+                  description: The city of the person or company issuing the invoice
+                from_state:
+                  type: string
+                  description: The state of the person or company issuing the invoice
+                from_zip:
+                  type: string
+                  description: The zip code of the person or company issuing the invoice
+                to_name:
+                  type: string
+                  description: The name of the person or company being invoiced
+                to_street:
+                  type: string
+                  description: The street address of the person or company being invoiced
+                to_city:
+                  type: string
+                  description: The city of the person or company being invoiced
+                to_state:
+                  type: string
+                  description: The state of the person or company being invoiced
+                to_zip:
+                  type: string
+                  description: The zip code of the person or company being invoiced
+                job:
+                  type: string
+                  description: The job or project associated with the invoice
+                paymentTerms:
+                  type: string
+                  description: The payment terms for the invoice
+                dueDate:
+                  type: string
+                  description: The due date for the invoice (YYYY-MM-DD format)
+                discount:
+                  type: number
+                  description: The discount to be applied to the invoice
+                salesTax:
+                  type: number
+                  description: The sales tax rate for the invoice (as percentage)
+                currency:
+                  type: string
+                  description: The currency for the invoice
+                items:
+                  type: string
+                  description: The items being invoiced (qty, description, unit_price)
+              required:
+                - invoiceNumber
+                - from_name
+                - from_street
+                - from_city
+                - from_state
+                - from_zip
+                - to_name
+                - to_street
+                - to_city
+                - to_state
+                - to_zip
+                - items
 components:
   securitySchemes:
     api_key:
@@ -21,4 +139,30 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  invoiceNumber: INV000001
+  date: '2025-02-01'
+  dueDate: '2025-11-30'
+  from_name: John Doe
+  from_street: 123 Elm St
+  from_city: Springfield
+  from_state: IL
+  from_zip: '62701'
+  to_name: Jane Smith
+  to_street: 456 Oak St
+  to_city: Springfield
+  to_state: IL
+  to_zip: '62702'
+  job: Web Development
+  paymentTerms: Net 30
+  discount: 10
+  salesTax: 37.07
+  currency: USD
+  items:
+    - qty: 2
+      description: Web Design Services
+      unit_price: 500
+    - qty: 1
+      description: Domain Registration
+      unit_price: 100
