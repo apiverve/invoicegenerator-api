@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:invoicegenerator-api:1.1.12'
+    implementation 'com.github.apiverve:invoicegenerator-api:1.1.13'
 }
 ```
 
@@ -47,7 +47,25 @@ InvoiceGeneratorAPIClient client = new InvoiceGeneratorAPIClient("YOUR_API_KEY")
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("key", "value");
+    parameters.put("invoiceNumber", "12345");
+    parameters.put("date", "2025-02-01");
+    parameters.put("from_name", "John Doe");
+    parameters.put("from_street", "123 Main St");
+    parameters.put("from_city", "Anytown");
+    parameters.put("from_state", "CA");
+    parameters.put("from_zip", "12345");
+    parameters.put("to_name", "Jane Doe");
+    parameters.put("to_street", "456 Elm St");
+    parameters.put("to_city", "Othertown");
+    parameters.put("to_state", "NY");
+    parameters.put("to_zip", "67890");
+    parameters.put("job", "Web Design Project");
+    parameters.put("paymentTerms", "Net 30");
+    parameters.put("dueDate", "2023-12-31");
+    parameters.put("discount", 10);
+    parameters.put("salesTax", 15);
+    parameters.put("currency", "USD");
+    parameters.put("items", new ArrayList<>());
 
     // Execute the request
     APIResponse response = client.execute(parameters);
@@ -135,7 +153,7 @@ For detailed API documentation, visit: [https://docs.apiverve.com/ref/invoicegen
 
 ## Get Your API Key
 
-Get your API key from [https://apiverve.com](https://apiverve.com)
+Get your API key from [https://apiverve.com](https://apiverve.com?utm_source=android&utm_medium=readme)
 
 ---
 
@@ -162,4 +180,4 @@ This SDK is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## About APIVerve
 
-[APIVerve](https://apiverve.com) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
+[APIVerve](https://apiverve.com?utm_source=android&utm_medium=readme) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
