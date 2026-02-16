@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:invoicegenerator-api:1.1.13'
+    implementation 'com.github.apiverve:invoicegenerator-api:1.1.14'
 }
 ```
 
@@ -47,7 +47,7 @@ InvoiceGeneratorAPIClient client = new InvoiceGeneratorAPIClient("YOUR_API_KEY")
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("invoiceNumber", "12345");
+    parameters.put("invoiceNumber", "INV000001");
     parameters.put("date", "2025-02-01");
     parameters.put("from_name", "John Doe");
     parameters.put("from_street", "123 Main St");
@@ -59,13 +59,13 @@ try {
     parameters.put("to_city", "Othertown");
     parameters.put("to_state", "NY");
     parameters.put("to_zip", "67890");
-    parameters.put("job", "Web Design Project");
+    parameters.put("job", "Web Development");
     parameters.put("paymentTerms", "Net 30");
-    parameters.put("dueDate", "2023-12-31");
+    parameters.put("dueDate", "2025-11-30");
     parameters.put("discount", 10);
-    parameters.put("salesTax", 15);
+    parameters.put("salesTax", 37.07);
     parameters.put("currency", "USD");
-    parameters.put("items", new ArrayList<>());
+    parameters.put("items", Arrays.asList([object Object], [object Object]));
 
     // Execute the request
     APIResponse response = client.execute(parameters);
