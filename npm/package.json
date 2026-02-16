@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/invoicegenerator",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Invoice Generator is a simple tool for generating invoices. It returns a PDF of the generated invoice.",
   "main": "index.js",
   "types": "index.d.ts",
