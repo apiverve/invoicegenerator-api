@@ -44,7 +44,19 @@ from apiverve_invoicegenerator.apiClient import InvoicegeneratorAPIClient
 # Initialize the client with your APIVerve API key
 api = InvoicegeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "invoiceNumber": "INV000001", "date": "2025-02-01", "dueDate": "2025-11-30", "from": { "from_name": "John Doe", "from_street": "123 Elm St", "from_city": "Springfield", "from_state": "IL", "from_zip": "62701" }, "to": { "to_name": "Jane Smith", "to_street": "456 Oak St", "to_city": "Springfield", "to_state": "IL", "to_zip": "62702" }, "job": "Web Development", "paymentTerms": "Net 30", "discount": 10, "salesTax": 37.07, "currency": "USD", "items": [ { "qty": 2, "description": "Web Design Services", "unit_price": 500 }, { "qty": 1, "description": "Domain Registration", "unit_price": 100 } ] }
+query = {
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
+    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
+}
 
 try:
     # Make the API call
@@ -82,7 +94,19 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "invoiceNumber": "INV000001", "date": "2025-02-01", "dueDate": "2025-11-30", "from": { "from_name": "John Doe", "from_street": "123 Elm St", "from_city": "Springfield", "from_state": "IL", "from_zip": "62701" }, "to": { "to_name": "Jane Smith", "to_street": "456 Oak St", "to_city": "Springfield", "to_state": "IL", "to_zip": "62702" }, "job": "Web Development", "paymentTerms": "Net 30", "discount": 10, "salesTax": 37.07, "currency": "USD", "items": [ { "qty": 2, "description": "Web Design Services", "unit_price": 500 }, { "qty": 1, "description": "Domain Registration", "unit_price": 100 } ] }
+query = {
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
+    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
+}
 ```
 
 ###### Simple Request
@@ -122,7 +146,19 @@ from apiverve_invoicegenerator.apiClient import InvoicegeneratorAPIClient, Invoi
 
 api = InvoicegeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "invoiceNumber": "INV000001", "date": "2025-02-01", "dueDate": "2025-11-30", "from": { "from_name": "John Doe", "from_street": "123 Elm St", "from_city": "Springfield", "from_state": "IL", "from_zip": "62701" }, "to": { "to_name": "Jane Smith", "to_street": "456 Oak St", "to_city": "Springfield", "to_state": "IL", "to_zip": "62702" }, "job": "Web Development", "paymentTerms": "Net 30", "discount": 10, "salesTax": 37.07, "currency": "USD", "items": [ { "qty": 2, "description": "Web Design Services", "unit_price": 500 }, { "qty": 1, "description": "Domain Registration", "unit_price": 100 } ] }
+query = {
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
+    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
+}
 
 try:
     result = api.execute(query)
@@ -143,7 +179,19 @@ from apiverve_invoicegenerator.apiClient import InvoicegeneratorAPIClient, Invoi
 
 api = InvoicegeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "invoiceNumber": "INV000001", "date": "2025-02-01", "dueDate": "2025-11-30", "from": { "from_name": "John Doe", "from_street": "123 Elm St", "from_city": "Springfield", "from_state": "IL", "from_zip": "62701" }, "to": { "to_name": "Jane Smith", "to_street": "456 Oak St", "to_city": "Springfield", "to_state": "IL", "to_zip": "62702" }, "job": "Web Development", "paymentTerms": "Net 30", "discount": 10, "salesTax": 37.07, "currency": "USD", "items": [ { "qty": 2, "description": "Web Design Services", "unit_price": 500 }, { "qty": 1, "description": "Domain Registration", "unit_price": 100 } ] }
+query = {
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
+    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
+}
 
 try:
     result = api.execute(query)
@@ -177,7 +225,19 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_invoicegenerator.apiClient import InvoicegeneratorAPIClient, InvoicegeneratorAPIClientError
 
-query = { "invoiceNumber": "INV000001", "date": "2025-02-01", "dueDate": "2025-11-30", "from": { "from_name": "John Doe", "from_street": "123 Elm St", "from_city": "Springfield", "from_state": "IL", "from_zip": "62701" }, "to": { "to_name": "Jane Smith", "to_street": "456 Oak St", "to_city": "Springfield", "to_state": "IL", "to_zip": "62702" }, "job": "Web Development", "paymentTerms": "Net 30", "discount": 10, "salesTax": 37.07, "currency": "USD", "items": [ { "qty": 2, "description": "Web Design Services", "unit_price": 500 }, { "qty": 1, "description": "Domain Registration", "unit_price": 100 } ] }
+query = {
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
+    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
+}
 
 # Using context manager ensures proper cleanup
 with InvoicegeneratorAPIClient("[YOUR_API_KEY]") as api:
@@ -203,7 +263,19 @@ from apiverve_invoicegenerator.apiClient import InvoicegeneratorAPIClient
 # Enable debug mode
 api = InvoicegeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "invoiceNumber": "INV000001", "date": "2025-02-01", "dueDate": "2025-11-30", "from": { "from_name": "John Doe", "from_street": "123 Elm St", "from_city": "Springfield", "from_state": "IL", "from_zip": "62701" }, "to": { "to_name": "Jane Smith", "to_street": "456 Oak St", "to_city": "Springfield", "to_state": "IL", "to_zip": "62702" }, "job": "Web Development", "paymentTerms": "Net 30", "discount": 10, "salesTax": 37.07, "currency": "USD", "items": [ { "qty": 2, "description": "Web Design Services", "unit_price": 500 }, { "qty": 1, "description": "Domain Registration", "unit_price": 100 } ] }
+query = {
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
+    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -218,8 +290,21 @@ from apiverve_invoicegenerator.apiClient import InvoicegeneratorAPIClient
 
 api = InvoicegeneratorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
+    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
+}
+
 try:
-    query = { "invoiceNumber": "INV000001", "date": "2025-02-01", "dueDate": "2025-11-30", "from": { "from_name": "John Doe", "from_street": "123 Elm St", "from_city": "Springfield", "from_state": "IL", "from_zip": "62701" }, "to": { "to_name": "Jane Smith", "to_street": "456 Oak St", "to_city": "Springfield", "to_state": "IL", "to_zip": "62702" }, "job": "Web Development", "paymentTerms": "Net 30", "discount": 10, "salesTax": 37.07, "currency": "USD", "items": [ { "qty": 2, "description": "Web Design Services", "unit_price": 500 }, { "qty": 1, "description": "Domain Registration", "unit_price": 100 } ] }
     result = api.execute(query)
     print(result)
 finally:
