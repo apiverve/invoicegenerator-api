@@ -61,40 +61,40 @@ class Program
         var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
     },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
 };
 
         // Make the API call
@@ -158,40 +158,40 @@ public class Example
         var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
     },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -223,40 +223,40 @@ public class Example
         var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
     },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -293,40 +293,40 @@ public class Example
         var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
     },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
 };
 
         try
@@ -382,40 +382,40 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
     },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
 };
 
         try
@@ -456,40 +456,40 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
     },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -515,40 +515,40 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
     },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -566,40 +566,40 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
     },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -610,44 +610,45 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
+var queryOptions = new QueryOptions {
+    invoiceNumber = "INV000001",
+    date = "2025-02-01",
+    dueDate = "2025-11-30",
+    from = {
+        from_name = "John Doe",
+        from_street = "123 Elm St",
+        from_city = "Springfield",
+        from_state = "IL",
+        from_zip = "62701"
+    },
+    to = {
+        to_name = "Jane Smith",
+        to_street = "456 Oak St",
+        to_city = "Springfield",
+        to_state = "IL",
+        to_zip = "62702"
+    },
+    job = "Web Development",
+    paymentTerms = "Net 30",
+    discount = 10,
+    salesTax = 37.07,
+    currency = "USD",
+    items = [
+        {
+            qty = 2,
+            description = "Web Design Services",
+            unit_price = 500
+        },
+        {
+            qty = 1,
+            description = "Domain Registration",
+            unit_price = 100
+        }
+    ]
+};
+
 using (var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]"))
 {
-    var queryOptions = new QueryOptions {
-  invoiceNumber = "INV000001",
-  date = "2025-02-01",
-  dueDate = "2025-11-30",
-  from = {
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701"
-  },
-  to = {
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702"
-  },
-  job = "Web Development",
-  paymentTerms = "Net 30",
-  discount = 10,
-  salesTax = 37.07,
-  currency = "USD",
-  items = [
-    {
-      qty = 2,
-      description = "Web Design Services",
-      unit_price = 500
-    },
-    {
-      qty = 1,
-      description = "Domain Registration",
-      unit_price = 100
-    }
-  ]
-};
     var response = await apiClient.ExecuteAsync(queryOptions);
     Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response, Newtonsoft.Json.Formatting.Indented));
 }
