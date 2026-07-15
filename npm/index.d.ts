@@ -4,18 +4,30 @@ declare module '@apiverve/invoicegenerator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface invoicegeneratorResponse {
     status: string;
     error: string | null;
     data: InvoiceGeneratorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface InvoiceGeneratorData {
-      pdfName:     string;
-      expires:     number;
-      downloadURL: string;
+      pdfName:     null | string;
+      expires:     number | null;
+      downloadURL: null | string;
   }
 
   export default class invoicegeneratorWrapper {
