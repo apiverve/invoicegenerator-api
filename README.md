@@ -8,7 +8,7 @@ The Invoice Generator API provides a simple, reliable way to integrate invoice g
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
-[![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
+[![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
 **Available on:**
@@ -30,11 +30,46 @@ The Invoice Generator API provides a simple, reliable way to integrate invoice g
 ```javascript
 async function callInvoiceGeneratorAPI() {
     try {
+        const requestBody = {
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [
+        {
+            "qty": 2,
+            "description": "Web Design Services",
+            "unit_price": 500
+        },
+        {
+            "qty": 1,
+            "description": "Domain Registration",
+            "unit_price": 100
+        }
+    ]
+};
+
         const response = await fetch('https://api.apiverve.com/v1/invoicegenerator', {
-            method: 'GET',
+            method: 'POST',
             headers: {
-                'x-api-key': 'YOUR_API_KEY_HERE'
-            }
+                'x-api-key': 'YOUR_API_KEY_HERE',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
         });
 
         const data = await response.json();
@@ -50,8 +85,41 @@ callInvoiceGeneratorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/invoicegenerator?param=value" \
-  -H "x-api-key: YOUR_API_KEY_HERE"
+curl -X POST "https://api.apiverve.com/v1/invoicegenerator" \
+  -H "x-api-key: YOUR_API_KEY_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "invoiceNumber": "INV000001",
+    "date": "2025-02-01",
+    "dueDate": "2025-11-30",
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
+    "job": "Web Development",
+    "paymentTerms": "Net 30",
+    "discount": 10,
+    "salesTax": 37.07,
+    "currency": "USD",
+    "items": [
+        {
+            "qty": 2,
+            "description": "Web Design Services",
+            "unit_price": 500
+        },
+        {
+            "qty": 1,
+            "description": "Domain Registration",
+            "unit_price": 100
+        }
+    ]
+}'
 ```
 
 **Get your API key:** [https://apiverve.com](https://apiverve.com)
@@ -150,7 +218,7 @@ go get github.com/apiverve/invoicegenerator-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +237,7 @@ go get github.com/apiverve/invoicegenerator-api/go
 The Invoice Generator API is commonly used for:
 
 - **Web Applications** - Add invoice generator features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with invoice generator capabilities
 - **Data Pipelines** - Process and analyze data at scale
