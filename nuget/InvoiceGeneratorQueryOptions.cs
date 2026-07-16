@@ -104,13 +104,13 @@ namespace APIVerve.API.InvoiceGenerator
         /// The discount to be applied to the invoice
         /// </summary>
         [JsonProperty("discount")]
-        public string Discount { get; set; }
+        public double? Discount { get; set; }
 
         /// <summary>
         /// The sales tax rate for the invoice (as percentage)
         /// </summary>
         [JsonProperty("salesTax")]
-        public string SalesTax { get; set; }
+        public double? SalesTax { get; set; }
 
         /// <summary>
         /// The currency for the invoice
@@ -122,6 +122,6 @@ namespace APIVerve.API.InvoiceGenerator
         /// The items being invoiced (qty, description, unit_price)
         /// </summary>
         [JsonProperty("items")]
-        public string Items { get; set; }
+        public List<string> Items { get; set; }
     }
 }
