@@ -84,6 +84,7 @@ namespace APIVerve.API.InvoiceGenerator
             { "dueDate", new ValidationRule { Type = "string", Required = false, Format = "date" } },
             { "discount", new ValidationRule { Type = "number", Required = false, Min = 0 } },
             { "salesTax", new ValidationRule { Type = "number", Required = false, Min = 0, Max = 100 } },
+            { "logoURL", new ValidationRule { Type = "string", Required = false, Format = "url" } },
             { "currency", new ValidationRule { Type = "string", Required = false } },
             { "items", new ValidationRule { Type = "array", Required = true } }
         };

@@ -107,10 +107,16 @@ namespace APIVerve.API.InvoiceGenerator
         public double? Discount { get; set; }
 
         /// <summary>
-        /// The sales tax rate for the invoice (as percentage)
+        /// The sales tax rate for the invoice as a percentage, applied to the subtotal after discount (e.g. 7.5 for 7.5%)
         /// </summary>
         [JsonProperty("salesTax")]
         public double? SalesTax { get; set; }
+
+        /// <summary>
+        /// Public http(s) URL of an image to use as the invoice logo (max 2 MB, fetched with a 5 second timeout; a placeholder logo is used if it can't be loaded)
+        /// </summary>
+        [JsonProperty("logoURL")]
+        public string LogoURL { get; set; }
 
         /// <summary>
         /// The currency for the invoice
@@ -122,6 +128,6 @@ namespace APIVerve.API.InvoiceGenerator
         /// The items being invoiced (qty, description, unit_price)
         /// </summary>
         [JsonProperty("items")]
-        public List<string> Items { get; set; }
+        public object Items { get; set; }
     }
 }

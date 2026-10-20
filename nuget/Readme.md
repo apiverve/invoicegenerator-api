@@ -1,13 +1,12 @@
-InvoiceGenerator API
+Invoice Generator API
 ============
 
-Invoice Generator is a simple tool for generating invoices. It returns a PDF of the generated invoice.
+Invoice Generator is an invoice generation API that creates downloadable PDF invoices from party addresses, line items, and payment terms. It computes subtotals with discounts and sales tax, returning an expiring download link.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [InvoiceGenerator API](https://apiverve.com/marketplace/invoicegenerator?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.InvoiceGenerator.svg)](https://www.nuget.org/packages/APIVerve.API.InvoiceGenerator)
+
+This is a .NET wrapper for the [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the invoicegenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Invoice Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,37 +60,26 @@ class Program
         var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
-};
+            InvoiceNumber = "INV000001",
+            Date = "2025-02-01",
+            DueDate = "2025-11-30",
+            From_name = "John Doe",
+            From_street = "123 Elm St",
+            From_city = "Springfield",
+            From_state = "IL",
+            From_zip = "62701",
+            To_name = "Jane Smith",
+            To_street = "456 Oak St",
+            To_city = "Springfield",
+            To_state = "IL",
+            To_zip = "62702",
+            Job = "Web Development",
+            PaymentTerms = "Net 30",
+            Discount = 10,
+            SalesTax = 7.5,
+            Currency = "USD",
+            Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
+        };
 
         // Make the API call
         try
@@ -121,13 +109,13 @@ class Program
 
 ## Usage
 
-The InvoiceGenerator API documentation is found here: [https://docs.apiverve.com/ref/invoicegenerator](https://docs.apiverve.com/ref/invoicegenerator?utm_source=nuget&utm_medium=readme).
+The Invoice Generator API documentation is found here: [https://docs.apiverve.com/ref/invoicegenerator](https://docs.apiverve.com/ref/invoicegenerator?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-InvoiceGenerator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Invoice Generator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -154,37 +142,26 @@ public class Example
         var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
-};
+            InvoiceNumber = "INV000001",
+            Date = "2025-02-01",
+            DueDate = "2025-11-30",
+            From_name = "John Doe",
+            From_street = "123 Elm St",
+            From_city = "Springfield",
+            From_state = "IL",
+            From_zip = "62701",
+            To_name = "Jane Smith",
+            To_street = "456 Oak St",
+            To_city = "Springfield",
+            To_state = "IL",
+            To_zip = "62702",
+            Job = "Web Development",
+            PaymentTerms = "Net 30",
+            Discount = 10,
+            SalesTax = 7.5,
+            Currency = "USD",
+            Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -215,37 +192,26 @@ public class Example
         var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
-};
+            InvoiceNumber = "INV000001",
+            Date = "2025-02-01",
+            DueDate = "2025-11-30",
+            From_name = "John Doe",
+            From_street = "123 Elm St",
+            From_city = "Springfield",
+            From_state = "IL",
+            From_zip = "62701",
+            To_name = "Jane Smith",
+            To_street = "456 Oak St",
+            To_city = "Springfield",
+            To_state = "IL",
+            To_zip = "62702",
+            Job = "Web Development",
+            PaymentTerms = "Net 30",
+            Discount = 10,
+            SalesTax = 7.5,
+            Currency = "USD",
+            Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -281,37 +247,26 @@ public class Example
         var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
-};
+            InvoiceNumber = "INV000001",
+            Date = "2025-02-01",
+            DueDate = "2025-11-30",
+            From_name = "John Doe",
+            From_street = "123 Elm St",
+            From_city = "Springfield",
+            From_state = "IL",
+            From_zip = "62701",
+            To_name = "Jane Smith",
+            To_street = "456 Oak St",
+            To_city = "Springfield",
+            To_state = "IL",
+            To_zip = "62702",
+            Job = "Web Development",
+            PaymentTerms = "Net 30",
+            Discount = 10,
+            SalesTax = 7.5,
+            Currency = "USD",
+            Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
+        };
 
         try
         {
@@ -366,37 +321,26 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
-};
+            InvoiceNumber = "INV000001",
+            Date = "2025-02-01",
+            DueDate = "2025-11-30",
+            From_name = "John Doe",
+            From_street = "123 Elm St",
+            From_city = "Springfield",
+            From_state = "IL",
+            From_zip = "62701",
+            To_name = "Jane Smith",
+            To_street = "456 Oak St",
+            To_city = "Springfield",
+            To_state = "IL",
+            To_zip = "62702",
+            Job = "Web Development",
+            PaymentTerms = "Net 30",
+            Discount = 10,
+            SalesTax = 7.5,
+            Currency = "USD",
+            Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
+        };
 
         try
         {
@@ -436,36 +380,25 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
+    InvoiceNumber = "INV000001",
+    Date = "2025-02-01",
+    DueDate = "2025-11-30",
+    From_name = "John Doe",
+    From_street = "123 Elm St",
+    From_city = "Springfield",
+    From_state = "IL",
+    From_zip = "62701",
+    To_name = "Jane Smith",
+    To_street = "456 Oak St",
+    To_city = "Springfield",
+    To_state = "IL",
+    To_zip = "62702",
+    Job = "Web Development",
+    PaymentTerms = "Net 30",
+    Discount = 10,
+    SalesTax = 7.5,
+    Currency = "USD",
+    Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -491,36 +424,25 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
+    InvoiceNumber = "INV000001",
+    Date = "2025-02-01",
+    DueDate = "2025-11-30",
+    From_name = "John Doe",
+    From_street = "123 Elm St",
+    From_city = "Springfield",
+    From_state = "IL",
+    From_zip = "62701",
+    To_name = "Jane Smith",
+    To_street = "456 Oak St",
+    To_city = "Springfield",
+    To_state = "IL",
+    To_zip = "62702",
+    Job = "Web Development",
+    PaymentTerms = "Net 30",
+    Discount = 10,
+    SalesTax = 7.5,
+    Currency = "USD",
+    Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -538,36 +460,25 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
+    InvoiceNumber = "INV000001",
+    Date = "2025-02-01",
+    DueDate = "2025-11-30",
+    From_name = "John Doe",
+    From_street = "123 Elm St",
+    From_city = "Springfield",
+    From_state = "IL",
+    From_zip = "62701",
+    To_name = "Jane Smith",
+    To_street = "456 Oak St",
+    To_city = "Springfield",
+    To_state = "IL",
+    To_zip = "62702",
+    Job = "Web Development",
+    PaymentTerms = "Net 30",
+    Discount = 10,
+    SalesTax = 7.5,
+    Currency = "USD",
+    Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -579,36 +490,25 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new InvoiceGeneratorQueryOptions {
-    invoiceNumber = "INV000001",
-    date = "2025-02-01",
-    dueDate = "2025-11-30",
-    from_name = "John Doe",
-    from_street = "123 Elm St",
-    from_city = "Springfield",
-    from_state = "IL",
-    from_zip = "62701",
-    to_name = "Jane Smith",
-    to_street = "456 Oak St",
-    to_city = "Springfield",
-    to_state = "IL",
-    to_zip = "62702",
-    job = "Web Development",
-    paymentTerms = "Net 30",
-    discount = 10,
-    salesTax = 37.07,
-    currency = "USD",
-    items = [
-        {
-            qty = 2,
-            description = "Web Design Services",
-            unit_price = 500
-        },
-        {
-            qty = 1,
-            description = "Domain Registration",
-            unit_price = 100
-        }
-    ]
+    InvoiceNumber = "INV000001",
+    Date = "2025-02-01",
+    DueDate = "2025-11-30",
+    From_name = "John Doe",
+    From_street = "123 Elm St",
+    From_city = "Springfield",
+    From_state = "IL",
+    From_zip = "62701",
+    To_name = "Jane Smith",
+    To_street = "456 Oak St",
+    To_city = "Springfield",
+    To_state = "IL",
+    To_zip = "62702",
+    Job = "Web Development",
+    PaymentTerms = "Net 30",
+    Discount = 10,
+    SalesTax = 7.5,
+    Currency = "USD",
+    Items = Newtonsoft.Json.Linq.JToken.Parse(@"[{""qty"":2,""description"":""Web Design Services"",""unit_price"":500},{""qty"":1,""description"":""Domain Registration"",""unit_price"":100}]")
 };
 
 using (var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -639,7 +539,7 @@ using (var apiClient = new InvoiceGeneratorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -650,12 +550,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
