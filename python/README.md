@@ -1,13 +1,12 @@
 Invoice Generator API
 ============
 
-Invoice Generator is a simple tool for generating invoices. It returns a PDF of the generated invoice.
+Invoice Generator is an invoice generation API that creates downloadable PDF invoices from party addresses, line items, and payment terms. It computes subtotals with discounts and sales tax, returning an expiring download link.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-invoicegenerator.svg)](https://pypi.org/project/apiverve-invoicegenerator/)
+
+This is a Python wrapper for the [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-invoicegenerator
 
 ## Configuration
 
-Before using the invoicegenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Invoice Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -48,12 +47,20 @@ query = {
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
     "dueDate": "2025-11-30",
-    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
-    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
 }
@@ -72,7 +79,7 @@ except Exception as e:
 
 ## Usage
 
-The Invoice Generator API documentation is found here: [https://docs.apiverve.com/ref/invoicegenerator](https://docs.apiverve.com/ref/invoicegenerator?utm_source=pypi&utm_medium=readme).
+The Invoice Generator API documentation is found here: [https://docs.apiverve.com/ref/invoicegenerator](https://docs.apiverve.com/ref/invoicegenerator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -98,12 +105,20 @@ query = {
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
     "dueDate": "2025-11-30",
-    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
-    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
 }
@@ -126,9 +141,9 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "pdfName": "f9210db5-8be3-4de4-8b20-d58019b0600a.pdf",
-    "expires": 1740259902629,
-    "downloadURL": "https://storage.googleapis.com/apiverve-helpers.appspot.com/htmltopdf/f9210db5-8be3-4de4-8b20-d58019b0600a.pdf?GoogleAccessId=1089020767582-compute%40developer.gserviceaccount.com&Expires=1740259902&Signature=PVHHoAfVg%2BUOXCC1kt3m3ttRAns6UTrYPm8%2BVS19hEFAH27VG%2FnZHgUl75iUYpZozqycZw7etohyekZIBPeqozfFWkkodkMvi487x2onk%2B3S9nQN5J0gmPxhcfWVjT4jPxk7ggQMhG2rl7QCxjAhG9OGo1U9OuhSYdJXaQqEmOMhTDkhW%2BB3RFMHqXmgYZHBLo8kh1aLLK%2FdKbGOF5ofR33W0w%2F5ywdykG%2BAnk0Rv3oxTIppAR%2F4NsDeqhYBgq3yXyRubOgcZGBEEtAj2bpYPuzNtqKgF7aENTQe4MkghWct8P4qs%2F8MDSSMCZCN1B24Xz8TxGGem814qThfv3DLOw%3D%3D"
+    "pdfName": "fc17c4bd-e660-4078-94ae-f46be56c9006.pdf",
+    "expires": 1766096689189,
+    "downloadURL": "https://storage.googleapis.com/apiverve-helpers.appspot.com/htmltopdf/fc17c4bd-e660-4078-94ae-f46be56c9006.pdf?GoogleAccessId=1089020767582-compute%40developer.gserviceaccount.com&Expires=1766096689&Signature=zZYB17Rj1yfbfhM3Epmjc9PEfmsVpgsCATX5%2Bx2yAo%2FV45xUatVzkAjUkPC48PkR4m%2BF7uIJBToUY2QAZMzNIOre4T0Md2eToXtcYF%2F%2FefS3sZocODRdiC%2BmEuMZjsAPMfkhbCMQZT4lZczQn9sfaWJlWJi%2FGWXKVUwZby3yn06Ed7OqianYbxQj87ENoqYudZFe5qFpI0hmwh4lBrnIM40hb4eZwwbGEvZL2WejNdBgD0cKb3C%2BHwJHkPvd2PAzFfNvuJolBxMN4jE3QCx9DN2MdHGUqb7t3vlP0Kder8m0lMpac%2BPbwZsDVmlF595cFzkKaE928uxzA1Mzkenffg%3D%3D"
   }
 }
 ```
@@ -150,12 +165,20 @@ query = {
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
     "dueDate": "2025-11-30",
-    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
-    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
 }
@@ -183,12 +206,20 @@ query = {
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
     "dueDate": "2025-11-30",
-    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
-    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
 }
@@ -229,12 +260,20 @@ query = {
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
     "dueDate": "2025-11-30",
-    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
-    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
 }
@@ -267,12 +306,20 @@ query = {
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
     "dueDate": "2025-11-30",
-    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
-    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
 }
@@ -294,12 +341,20 @@ query = {
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
     "dueDate": "2025-11-30",
-    "from": {"from_name":"John Doe","from_street":"123 Elm St","from_city":"Springfield","from_state":"IL","from_zip":"62701"},
-    "to": {"to_name":"Jane Smith","to_street":"456 Oak St","to_city":"Springfield","to_state":"IL","to_zip":"62702"},
+    "from_name": "John Doe",
+    "from_street": "123 Elm St",
+    "from_city": "Springfield",
+    "from_state": "IL",
+    "from_zip": "62701",
+    "to_name": "Jane Smith",
+    "to_street": "456 Oak St",
+    "to_city": "Springfield",
+    "to_state": "IL",
+    "to_zip": "62702",
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [{"qty":2,"description":"Web Design Services","unit_price":500},{"qty":1,"description":"Domain Registration","unit_price":100}]
 }
@@ -316,7 +371,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -327,12 +382,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

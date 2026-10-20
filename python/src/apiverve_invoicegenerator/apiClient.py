@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -41,6 +41,7 @@ class InvoicegeneratorAPIClient:
         "dueDate": {"type": "string", "required": False, "format": "date"},
         "discount": {"type": "number", "required": False, "min": 0},
         "salesTax": {"type": "number", "required": False, "min": 0, "max": 100},
+        "logoURL": {"type": "string", "required": False, "format": "url"},
         "currency": {"type": "string", "required": False},
         "items": {"type": "array", "required": True}
     }
