@@ -2,8 +2,9 @@ openapi: 3.0.4
 info:
   title: Invoice Generator
   description: >-
-    Invoice Generator is a simple tool for generating invoices. It returns a PDF
-    of the generated invoice.
+    Invoice Generator is an invoice generation API that creates downloadable PDF
+    invoices from party addresses, line items, and payment terms. It computes
+    subtotals with discounts and sales tax, returning an expiring download link.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +19,7 @@ servers:
 paths:
   /v1/invoicegenerator:
     post:
-      summary: Generate Invoice
+      summary: Invoice Generator
       description: Generate an invoice
       operationId: invoicegenerator
       parameters: []
@@ -45,8 +46,7 @@ paths:
                 data:
                   pdfName: fc17c4bd-e660-4078-94ae-f46be56c9006.pdf
                   expires: 1766096689189
-                  downloadURL: >-
-                    https://storage.googleapis.com/apiverve-helpers.appspot.com/htmltopdf/fc17c4bd-e660-4078-94ae-f46be56c9006.pdf?GoogleAccessId=1089020767582-compute%40developer.gserviceaccount.com&Expires=1766096689&Signature=zZYB17Rj1yfbfhM3Epmjc9PEfmsVpgsCATX5%2Bx2yAo%2FV45xUatVzkAjUkPC48PkR4m%2BF7uIJBToUY2QAZMzNIOre4T0Md2eToXtcYF%2F%2FefS3sZocODRdiC%2BmEuMZjsAPMfkhbCMQZT4lZczQn9sfaWJlWJi%2FGWXKVUwZby3yn06Ed7OqianYbxQj87ENoqYudZFe5qFpI0hmwh4lBrnIM40hb4eZwwbGEvZL2WejNdBgD0cKb3C%2BHwJHkPvd2PAzFfNvuJolBxMN4jE3QCx9DN2MdHGUqb7t3vlP0Kder8m0lMpac%2BPbwZsDVmlF595cFzkKaE928uxzA1Mzkenffg%3D%3D
+                  downloadURL: https://storage.googleapis.com/apiverve-helpers.appspot.com/htmltopdf/fc17c4bd-e660-4078-94ae-f46be56c9006.pdf?GoogleAccessId=1089020767582-compute%40developer.gserviceaccount.com&Expires=1766096689&Signature=zZYB17Rj1yfbfhM3Epmjc9PEfmsVpgsCATX5%2Bx2yAo%2FV45xUatVzkAjUkPC48PkR4m%2BF7uIJBToUY2QAZMzNIOre4T0Md2eToXtcYF%2F%2FefS3sZocODRdiC%2BmEuMZjsAPMfkhbCMQZT4lZczQn9sfaWJlWJi%2FGWXKVUwZby3yn06Ed7OqianYbxQj87ENoqYudZFe5qFpI0hmwh4lBrnIM40hb4eZwwbGEvZL2WejNdBgD0cKb3C%2BHwJHkPvd2PAzFfNvuJolBxMN4jE3QCx9DN2MdHGUqb7t3vlP0Kder8m0lMpac%2BPbwZsDVmlF595cFzkKaE928uxzA1Mzkenffg%3D%3D
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
@@ -112,7 +112,15 @@ paths:
                   description: The discount to be applied to the invoice
                 salesTax:
                   type: number
-                  description: The sales tax rate for the invoice (as percentage)
+                  description: >-
+                    The sales tax rate for the invoice as a percentage, applied
+                    to the subtotal after discount (e.g. 7.5 for 7.5%)
+                logoURL:
+                  type: string
+                  description: >-
+                    Public http(s) URL of an image to use as the invoice logo
+                    (max 2 MB, fetched with a 5 second timeout; a placeholder
+                    logo is used if it can't be loaded)
                 currency:
                   type: string
                   description: The currency for the invoice
@@ -157,7 +165,7 @@ sampleRequest:
   job: Web Development
   paymentTerms: Net 30
   discount: 10
-  salesTax: 37.07
+  salesTax: 7.5
   currency: USD
   items:
     - qty: 2

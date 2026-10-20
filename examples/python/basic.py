@@ -35,7 +35,7 @@ def call_invoicegenerator_api():
     &#x27;job&#x27;: &#x27;Web Development&#x27;,
     &#x27;paymentTerms&#x27;: &#x27;Net 30&#x27;,
     &#x27;discount&#x27;: 10,
-    &#x27;salesTax&#x27;: 37.07,
+    &#x27;salesTax&#x27;: 7.5,
     &#x27;currency&#x27;: &#x27;USD&#x27;,
     &#x27;items&#x27;: [
         {

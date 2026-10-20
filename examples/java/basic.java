@@ -30,7 +30,7 @@ public class BasicExample {
         parameters.put(&quot;job&quot;, &quot;Web Development&quot;);
         parameters.put(&quot;paymentTerms&quot;, &quot;Net 30&quot;);
         parameters.put(&quot;discount&quot;, 10);
-        parameters.put(&quot;salesTax&quot;, 37.07);
+        parameters.put(&quot;salesTax&quot;, 7.5);
         parameters.put(&quot;currency&quot;, &quot;USD&quot;);
         parameters.put(&quot;items&quot;, [object Object],[object Object]);
 

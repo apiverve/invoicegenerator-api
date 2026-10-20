@@ -1,13 +1,13 @@
-# [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Invoice Generator is a simple tool for generating invoices. It returns a PDF of the generated invoice.
+Invoice Generator is an invoice generation API that creates downloadable PDF invoices from party addresses, line items, and payment terms. It computes subtotals with discounts and sales tax, returning an expiring download link.
 
 The Invoice Generator API provides a simple, reliable way to integrate invoice generator functionality into your applications. Built for developers who need production-ready invoice generator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -47,7 +47,7 @@ async function callInvoiceGeneratorAPI() {
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [
         {
@@ -105,7 +105,7 @@ curl -X POST "https://api.apiverve.com/v1/invoicegenerator" \
     "job": "Web Development",
     "paymentTerms": "Net 30",
     "discount": 10,
-    "salesTax": 37.07,
+    "salesTax": 7.5,
     "currency": "USD",
     "items": [
         {
@@ -225,7 +225,7 @@ go get github.com/apiverve/invoicegenerator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/invoicegenerator](https://docs.apiverve.com/ref/invoicegenerator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -255,11 +255,30 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Invoice Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "pdfName": "fc17c4bd-e660-4078-94ae-f46be56c9006.pdf",
+    "expires": 1766096689189,
+    "downloadURL": "https://storage.googleapis.com/apiverve-helpers.appspot.com/htmltopdf/fc17c4bd-e660-4078-94ae-f46be56c9006.pdf?GoogleAccessId=1089020767582-compute%40developer.gserviceaccount.com&Expires=1766096689&Signature=zZYB17Rj1yfbfhM3Epmjc9PEfmsVpgsCATX5%2Bx2yAo%2FV45xUatVzkAjUkPC48PkR4m%2BF7uIJBToUY2QAZMzNIOre4T0Md2eToXtcYF%2F%2FefS3sZocODRdiC%2BmEuMZjsAPMfkhbCMQZT4lZczQn9sfaWJlWJi%2FGWXKVUwZby3yn06Ed7OqianYbxQj87ENoqYudZFe5qFpI0hmwh4lBrnIM40hb4eZwwbGEvZL2WejNdBgD0cKb3C%2BHwJHkPvd2PAzFfNvuJolBxMN4jE3QCx9DN2MdHGUqb7t3vlP0Kder8m0lMpac%2BPbwZsDVmlF595cFzkKaE928uxzA1Mzkenffg%3D%3D"
+  }
 }
 ```
 
@@ -267,7 +286,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Invoice Generator API](https://apiverve.com/marketplace/invoicegenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

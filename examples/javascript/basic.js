@@ -31,7 +31,7 @@ async function callInvoiceGeneratorAPI() {
     &quot;job&quot;: &quot;Web Development&quot;,
     &quot;paymentTerms&quot;: &quot;Net 30&quot;,
     &quot;discount&quot;: 10,
-    &quot;salesTax&quot;: 37.07,
+    &quot;salesTax&quot;: 7.5,
     &quot;currency&quot;: &quot;USD&quot;,
     &quot;items&quot;: [
         {
