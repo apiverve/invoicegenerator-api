@@ -31,7 +31,7 @@ var query = {
   "job": "Web Development",
   "paymentTerms": "Net 30",
   "discount": 10,
-  "salesTax": 37.07,
+  "salesTax": 7.5,
   "currency": "USD",
   "items": [
     {

@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/invoicegenerator",
-  "version": "1.2.0",
-  "description": "Invoice Generator is a simple tool for generating invoices. It returns a PDF of the generated invoice.",
+  "version": "1.2.2",
+  "description": "Invoice Generator is an invoice generation API that creates downloadable PDF invoices from party addresses, line items, and payment terms. It computes subtotals with discounts and sales tax, returning an expiring download link.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "invoice generator", "invoice generator api", "invoice generator tool", "invoice generator software", "invoice generator service"
+    "invoice generator api", "invoice generation api", "pdf invoice generator", "pdf invoice api", "generate invoice pdf"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/invoicegenerator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/invoicegenerator?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/invoicegenerator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
