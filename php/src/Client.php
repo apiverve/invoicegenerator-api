@@ -15,11 +15,11 @@ use APIVerve\Invoicegenerator\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['invoiceNumber' => 'INV000001', 'date' => '2025-02-01', 'dueDate' => '2025-11-30', 'from_name' => 'John Doe', 'from_street' => '123 Elm St', 'from_city' => 'Springfield', 'from_state' => 'IL', 'from_zip' => '62701', 'to_name' => 'Jane Smith', 'to_street' => '456 Oak St', 'to_city' => 'Springfield', 'to_state' => 'IL', 'to_zip' => '62702', 'job' => 'Web Development', 'paymentTerms' => 'Net 30', 'discount' => 10, 'salesTax' => 37.07, 'currency' => 'USD', 'items' => [object Object],[object Object]]);
+ * $response = $client->execute(['invoiceNumber' => 'INV000001', 'date' => '2025-02-01', 'dueDate' => '2025-11-30', 'from_name' => 'John Doe', 'from_street' => '123 Elm St', 'from_city' => 'Springfield', 'from_state' => 'IL', 'from_zip' => '62701', 'to_name' => 'Jane Smith', 'to_street' => '456 Oak St', 'to_city' => 'Springfield', 'to_state' => 'IL', 'to_zip' => '62702', 'job' => 'Web Development', 'paymentTerms' => 'Net 30', 'discount' => 10, 'salesTax' => 7.5, 'currency' => 'USD', 'items' => [object Object],[object Object]]);
  * print_r($response);
  * ```
  *
- * @see https://apiverve.com/marketplace/invoicegenerator?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/invoicegenerator?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {
@@ -51,6 +51,7 @@ class Client
         'dueDate' => ['type' => 'string', 'required' => false, 'format' => 'date'],
         'discount' => ['type' => 'number', 'required' => false, 'min' => 0],
         'salesTax' => ['type' => 'number', 'required' => false, 'min' => 0, 'max' => 100],
+        'logoURL' => ['type' => 'string', 'required' => false, 'format' => 'url'],
         'currency' => ['type' => 'string', 'required' => false],
         'items' => ['type' => 'array', 'required' => true]
     ];

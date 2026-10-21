@@ -1,7 +1,7 @@
 {
     "name": "apiverve/invoicegenerator",
-    "description": "Invoice Generator is a simple tool for generating invoices. It returns a PDF of the generated invoice.",
-    "version": "1.2.0",
+    "description": "Invoice Generator is an invoice generation API that creates downloadable PDF invoices from party addresses, line items, and payment terms. It computes subtotals with discounts and sales tax, returning an expiring download link.",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "invoicegenerator",
-        "invoice generator",
         "invoice generator api",
-        "invoice generator tool",
-        "invoice generator software",
-        "invoice generator service"
+        "invoice generation api",
+        "pdf invoice generator",
+        "pdf invoice api",
+        "generate invoice pdf"
     ],
-    "homepage": "https://apiverve.com/marketplace/invoicegenerator?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/invoicegenerator?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/invoicegenerator",
