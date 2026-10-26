@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/invoicegenerator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Invoice Generator is an invoice generation API that creates downloadable PDF invoices from party addresses, line items, and payment terms. It computes subtotals with discounts and sales tax, returning an expiring download link.",
   "main": "index.js",
   "types": "index.d.ts",
