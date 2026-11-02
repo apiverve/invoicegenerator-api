@@ -1,7 +1,7 @@
 name: apiverve_invoicegenerator
-description: Invoice Generator is a simple tool for generating invoices. It returns a PDF of the generated invoice.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/invoicegenerator?utm_source=dart&utm_medium=homepage
+description: "Invoice Generator is an invoice generation API that creates downloadable PDF invoices from party addresses, line items, and payment terms. It computes subtotals with discounts and sales tax, returning an expiring download link."
+version: 1.2.4
+homepage: https://apiverve.com/marketplace/invoicegenerator?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/invoicegenerator-api/tree/main/dart
 
 environment:

@@ -6,22 +6,50 @@ class InvoicegeneratorResponse {
   final dynamic error;
   final InvoicegeneratorData? data;
 
+  /// Set only when the current plan locks one or more fields; null otherwise.
+  final PremiumInfo? premium;
+
   InvoicegeneratorResponse({
     required this.status,
     this.error,
     this.data,
+    this.premium,
   });
 
   factory InvoicegeneratorResponse.fromJson(Map<String, dynamic> json) => InvoicegeneratorResponse(
     status: json['status'] as String? ?? '',
     error: json['error'],
     data: json['data'] != null ? InvoicegeneratorData.fromJson(json['data']) : null,
+    premium: json['premium'] != null ? PremiumInfo.fromJson(json['premium']) : null,
   );
 
   Map<String, dynamic> toJson() => {
     'status': status,
     if (error != null) 'error': error,
     if (data != null) 'data': data,
+    if (premium != null) 'premium': premium!.toJson(),
+  };
+}
+
+/// Describes fields the current plan does not unlock. Locked fields arrive as null
+/// in [data], and [lockedFields] names them (nested ones use dot paths).
+class PremiumInfo {
+  final String? message;
+  final String? upgradeUrl;
+  final List<String>? lockedFields;
+
+  PremiumInfo({this.message, this.upgradeUrl, this.lockedFields});
+
+  factory PremiumInfo.fromJson(Map<String, dynamic> json) => PremiumInfo(
+    message: json['message'] as String?,
+    upgradeUrl: json['upgrade_url'] as String?,
+    lockedFields: (json['locked_fields'] as List?)?.map((e) => e.toString()).toList(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    if (message != null) 'message': message,
+    if (upgradeUrl != null) 'upgrade_url': upgradeUrl,
+    if (lockedFields != null) 'locked_fields': lockedFields,
   };
 }
 
@@ -29,7 +57,7 @@ class InvoicegeneratorResponse {
 
 class InvoicegeneratorData {
   String? pdfName;
-  int? expires;
+  num? expires;
   String? downloadURL;
 
   InvoicegeneratorData({
@@ -49,12 +77,20 @@ class InvoicegeneratorRequest {
   String invoiceNumber;
   String? date;
   String? dueDate;
-  Map<String, dynamic>? from;
-  Map<String, dynamic>? to;
+  String fromName;
+  String fromStreet;
+  String fromCity;
+  String fromState;
+  String fromZip;
+  String toName;
+  String toStreet;
+  String toCity;
+  String toState;
+  String toZip;
   String? job;
   String? paymentTerms;
-  int? discount;
-  double? salesTax;
+  num? discount;
+  num? salesTax;
   String? currency;
   List<Map<String, dynamic>> items;
 
@@ -62,8 +98,16 @@ class InvoicegeneratorRequest {
     required this.invoiceNumber,
     this.date,
     this.dueDate,
-    this.from,
-    this.to,
+    required this.fromName,
+    required this.fromStreet,
+    required this.fromCity,
+    required this.fromState,
+    required this.fromZip,
+    required this.toName,
+    required this.toStreet,
+    required this.toCity,
+    required this.toState,
+    required this.toZip,
     this.job,
     this.paymentTerms,
     this.discount,
@@ -76,8 +120,16 @@ class InvoicegeneratorRequest {
       'invoiceNumber': invoiceNumber,
       if (date != null) 'date': date,
       if (dueDate != null) 'dueDate': dueDate,
-      if (from != null) 'from': from,
-      if (to != null) 'to': to,
+      'from_name': fromName,
+      'from_street': fromStreet,
+      'from_city': fromCity,
+      'from_state': fromState,
+      'from_zip': fromZip,
+      'to_name': toName,
+      'to_street': toStreet,
+      'to_city': toCity,
+      'to_state': toState,
+      'to_zip': toZip,
       if (job != null) 'job': job,
       if (paymentTerms != null) 'paymentTerms': paymentTerms,
       if (discount != null) 'discount': discount,

@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// Invoice Generator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/invoicegenerator?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/invoicegenerator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [invoiceNumber] (required) - The invoice number
@@ -65,7 +65,8 @@ final _formatPatterns = {
 /// * [paymentTerms] - The payment terms for the invoice
 /// * [dueDate] - The due date for the invoice (YYYY-MM-DD format) [format: date]
 /// * [discount] - The discount to be applied to the invoice [min: 0]
-/// * [salesTax] - The sales tax rate for the invoice (as percentage) [min: 0, max: 100]
+/// * [salesTax] - The sales tax rate for the invoice as a percentage, applied to the subtotal after discount (e.g. 7.5 for 7.5%) [min: 0, max: 100]
+/// * [logoURL] - Public http(s) URL of an image to use as the invoice logo (max 2 MB, fetched with a 5 second timeout; a placeholder logo is used if it can't be loaded) [format: url]
 /// * [currency] - The currency for the invoice
 /// * [items] (required) - The items being invoiced (qty, description, unit_price)
 class InvoicegeneratorClient {
@@ -92,6 +93,7 @@ class InvoicegeneratorClient {
     'dueDate': ValidationRule(type: 'string', required: false, format: 'date'),
     'discount': ValidationRule(type: 'number', required: false, min: 0),
     'salesTax': ValidationRule(type: 'number', required: false, min: 0, max: 100),
+    'logoURL': ValidationRule(type: 'string', required: false, format: 'url'),
     'currency': ValidationRule(type: 'string', required: false),
     'items': ValidationRule(type: 'array', required: true),
   };
