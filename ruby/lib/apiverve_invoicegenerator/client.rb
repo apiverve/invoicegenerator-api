@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Invoicegenerator::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ invoiceNumber: "INV000001", date: "2025-02-01", dueDate: "2025-11-30", from_name: "John Doe", from_street: "123 Elm St", from_city: "Springfield", from_state: "IL", from_zip: "62701", to_name: "Jane Smith", to_street: "456 Oak St", to_city: "Springfield", to_state: "IL", to_zip: "62702", job: "Web Development", paymentTerms: "Net 30", discount: 10, salesTax: 7.5, currency: "USD", items: [object Object],[object Object] })
+    #   response = client.execute({ invoiceNumber: "INV000001", date: "2025-02-01", dueDate: "2025-03-03", from_name: "John Doe", from_street: "123 Elm St", from_city: "Springfield", from_state: "IL", from_zip: "62701", to_name: "Jane Smith", to_street: "456 Oak St", to_city: "Springfield", to_state: "IL", to_zip: "62702", job: "Web Development", paymentTerms: "Net 30", discount: 10, salesTax: 7.5, currency: "USD", items: [object Object],[object Object] })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/invoicegenerator?utm_source=ruby&utm_medium=referral&utm_content=readme
