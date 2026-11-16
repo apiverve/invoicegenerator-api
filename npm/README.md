@@ -59,7 +59,7 @@ Using the API is simple. All you have to do is make a request. The API will retu
 var query = {
   "invoiceNumber": "INV000001",
   "date": "2025-02-01",
-  "dueDate": "2025-11-30",
+  "dueDate": "2025-03-03",
   "from_name": "John Doe",
   "from_street": "123 Elm St",
   "from_city": "Springfield",
@@ -108,7 +108,7 @@ You can also use promises to make requests. The API returns a promise that you c
 var query = {
   "invoiceNumber": "INV000001",
   "date": "2025-02-01",
-  "dueDate": "2025-11-30",
+  "dueDate": "2025-03-03",
   "from_name": "John Doe",
   "from_street": "123 Elm St",
   "from_city": "Springfield",
@@ -158,7 +158,7 @@ async function makeRequest() {
     var query = {
   "invoiceNumber": "INV000001",
   "date": "2025-02-01",
-  "dueDate": "2025-11-30",
+  "dueDate": "2025-03-03",
   "from_name": "John Doe",
   "from_street": "123 Elm St",
   "from_city": "Springfield",
