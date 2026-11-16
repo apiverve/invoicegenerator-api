@@ -68,7 +68,7 @@ final _formatPatterns = {
 /// * [salesTax] - The sales tax rate for the invoice as a percentage, applied to the subtotal after discount (e.g. 7.5 for 7.5%) [min: 0, max: 100]
 /// * [logoURL] - Public http(s) URL of an image to use as the invoice logo (max 2 MB, fetched with a 5 second timeout; a placeholder logo is used if it can't be loaded) [format: url]
 /// * [currency] - The currency for the invoice
-/// * [items] (required) - The items being invoiced (qty, description, unit_price)
+/// * [items] (required) - The items being invoiced, one object per line: qty, description, unit_price
 class InvoicegeneratorClient {
   final String apiKey;
   final String baseUrl;

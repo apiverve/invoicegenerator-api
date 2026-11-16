@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_invoicegenerator: ^1.2.5
+  apiverve_invoicegenerator: ^1.2.6
 ```
 
 Then run:
@@ -36,7 +36,7 @@ void main() async {
     final response = await client.execute({
       'invoiceNumber': 'INV000001',
       'date': '2025-02-01',
-      'dueDate': '2025-11-30',
+      'dueDate': '2025-03-03',
       'from_name': 'John Doe',
       'from_street': '123 Elm St',
       'from_city': 'Springfield',
