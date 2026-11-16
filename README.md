@@ -33,7 +33,7 @@ async function callInvoiceGeneratorAPI() {
         const requestBody = {
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
-    "dueDate": "2025-11-30",
+    "dueDate": "2025-03-03",
     "from_name": "John Doe",
     "from_street": "123 Elm St",
     "from_city": "Springfield",
@@ -91,7 +91,7 @@ curl -X POST "https://api.apiverve.com/v1/invoicegenerator" \
   -d '{
     "invoiceNumber": "INV000001",
     "date": "2025-02-01",
-    "dueDate": "2025-11-30",
+    "dueDate": "2025-03-03",
     "from_name": "John Doe",
     "from_street": "123 Elm St",
     "from_city": "Springfield",

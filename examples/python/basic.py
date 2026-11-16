@@ -21,7 +21,7 @@ def call_invoicegenerator_api():
         request_body &#x3D; {
     &#x27;invoiceNumber&#x27;: &#x27;INV000001&#x27;,
     &#x27;date&#x27;: &#x27;2025-02-01&#x27;,
-    &#x27;dueDate&#x27;: &#x27;2025-11-30&#x27;,
+    &#x27;dueDate&#x27;: &#x27;2025-03-03&#x27;,
     &#x27;from_name&#x27;: &#x27;John Doe&#x27;,
     &#x27;from_street&#x27;: &#x27;123 Elm St&#x27;,
     &#x27;from_city&#x27;: &#x27;Springfield&#x27;,

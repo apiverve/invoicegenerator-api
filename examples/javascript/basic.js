@@ -17,7 +17,7 @@ async function callInvoiceGeneratorAPI() {
     const requestBody &#x3D; {
     &quot;invoiceNumber&quot;: &quot;INV000001&quot;,
     &quot;date&quot;: &quot;2025-02-01&quot;,
-    &quot;dueDate&quot;: &quot;2025-11-30&quot;,
+    &quot;dueDate&quot;: &quot;2025-03-03&quot;,
     &quot;from_name&quot;: &quot;John Doe&quot;,
     &quot;from_street&quot;: &quot;123 Elm St&quot;,
     &quot;from_city&quot;: &quot;Springfield&quot;,
