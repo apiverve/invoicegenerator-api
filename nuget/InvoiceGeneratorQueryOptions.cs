@@ -125,7 +125,7 @@ namespace APIVerve.API.InvoiceGenerator
         public string Currency { get; set; }
 
         /// <summary>
-        /// The items being invoiced (qty, description, unit_price)
+        /// The items being invoiced, one object per line: qty, description, unit_price
         /// </summary>
         [JsonProperty("items")]
         public object Items { get; set; }

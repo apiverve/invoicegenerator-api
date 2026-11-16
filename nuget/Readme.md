@@ -62,7 +62,7 @@ class Program
         var queryOptions = new InvoiceGeneratorQueryOptions {
             InvoiceNumber = "INV000001",
             Date = "2025-02-01",
-            DueDate = "2025-11-30",
+            DueDate = "2025-03-03",
             From_name = "John Doe",
             From_street = "123 Elm St",
             From_city = "Springfield",
@@ -144,7 +144,7 @@ public class Example
         var queryOptions = new InvoiceGeneratorQueryOptions {
             InvoiceNumber = "INV000001",
             Date = "2025-02-01",
-            DueDate = "2025-11-30",
+            DueDate = "2025-03-03",
             From_name = "John Doe",
             From_street = "123 Elm St",
             From_city = "Springfield",
@@ -194,7 +194,7 @@ public class Example
         var queryOptions = new InvoiceGeneratorQueryOptions {
             InvoiceNumber = "INV000001",
             Date = "2025-02-01",
-            DueDate = "2025-11-30",
+            DueDate = "2025-03-03",
             From_name = "John Doe",
             From_street = "123 Elm St",
             From_city = "Springfield",
@@ -249,7 +249,7 @@ public class Example
         var queryOptions = new InvoiceGeneratorQueryOptions {
             InvoiceNumber = "INV000001",
             Date = "2025-02-01",
-            DueDate = "2025-11-30",
+            DueDate = "2025-03-03",
             From_name = "John Doe",
             From_street = "123 Elm St",
             From_city = "Springfield",
@@ -323,7 +323,7 @@ public class Example
         var queryOptions = new InvoiceGeneratorQueryOptions {
             InvoiceNumber = "INV000001",
             Date = "2025-02-01",
-            DueDate = "2025-11-30",
+            DueDate = "2025-03-03",
             From_name = "John Doe",
             From_street = "123 Elm St",
             From_city = "Springfield",
@@ -382,7 +382,7 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 var queryOptions = new InvoiceGeneratorQueryOptions {
     InvoiceNumber = "INV000001",
     Date = "2025-02-01",
-    DueDate = "2025-11-30",
+    DueDate = "2025-03-03",
     From_name = "John Doe",
     From_street = "123 Elm St",
     From_city = "Springfield",
@@ -426,7 +426,7 @@ apiClient.SetLogger(message =>
 var queryOptions = new InvoiceGeneratorQueryOptions {
     InvoiceNumber = "INV000001",
     Date = "2025-02-01",
-    DueDate = "2025-11-30",
+    DueDate = "2025-03-03",
     From_name = "John Doe",
     From_street = "123 Elm St",
     From_city = "Springfield",
@@ -462,7 +462,7 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 var queryOptions = new InvoiceGeneratorQueryOptions {
     InvoiceNumber = "INV000001",
     Date = "2025-02-01",
-    DueDate = "2025-11-30",
+    DueDate = "2025-03-03",
     From_name = "John Doe",
     From_street = "123 Elm St",
     From_city = "Springfield",
@@ -492,7 +492,7 @@ The API client implements `IDisposable` for proper resource cleanup:
 var queryOptions = new InvoiceGeneratorQueryOptions {
     InvoiceNumber = "INV000001",
     Date = "2025-02-01",
-    DueDate = "2025-11-30",
+    DueDate = "2025-03-03",
     From_name = "John Doe",
     From_street = "123 Elm St",
     From_city = "Springfield",
